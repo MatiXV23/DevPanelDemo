@@ -1,0 +1,59 @@
+name: Publicar en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permisos mínimos que pide actions/deploy-pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Una publicación a la vez; si llegan dos push seguidos, gana el último.
+# No se cancela la que está en curso para no dejar Pages a medio publicar.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  construir:
+    name: Construir
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      # `npm run build` corre `tsc --noEmit` antes de Vite: si hay un error de tipos,
+      # la publicación se detiene acá en lugar de subir algo roto.
+      - name: Construir
+        run: npm run build
+
+      # La demo no tiene rutas del lado del servidor (cada pantalla es un .html real),
+      # así que no hace falta un 404.html que redirija. Sí el .nojekyll, para que Pages
+      # no se saltee los archivos que empiezan con guion bajo.
+      - name: Desactivar Jekyll
+        run: touch dist/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  publicar:
+    name: Publicar
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4

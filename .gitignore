@@ -1,2 +1,16 @@
-node_modules
-dist
+# Dependencias y build
+node_modules/
+dist/
+
+# Claude Code
+.claude/
+.claude.json
+.claude.local.json
+CLAUDE.local.md
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
