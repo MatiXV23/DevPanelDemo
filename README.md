@@ -11,7 +11,7 @@ Todo desde un lugar, sin memorizar comandos ni abrir cinco terminales.
 
 <br>
 
-[![Probar la demo](https://img.shields.io/badge/▶_Probar_la_demo-b9ef82?style=for-the-badge&labelColor=1b211c&color=b9ef82)](URL_DE_LA_DEMO)
+[![Probar la demo](https://img.shields.io/badge/▶_Probar_la_demo-b9ef82?style=for-the-badge&labelColor=1b211c&color=b9ef82)](https://matixv23.github.io/DevPanelDemo)
 
 <br>
 
@@ -104,7 +104,7 @@ No hace falta instalar nada ni crear una cuenta. La demo arranca con proyectos, 
 
 <br>
 
-[![Probar la demo](https://img.shields.io/badge/▶_Entrar_a_la_demo-b9ef82?style=for-the-badge&labelColor=1b211c&color=b9ef82)](URL_DE_LA_DEMO)
+[![Probar la demo](https://img.shields.io/badge/▶_Entrar_a_la_demo-b9ef82?style=for-the-badge&labelColor=1b211c&color=b9ef82)](https://matixv23.github.io/DevPanelDemo)
 
 <br>
 
@@ -133,7 +133,7 @@ Escribinos y lo vemos juntos.
 
 <br>
 
-**[✉️ Contacto](mailto:hola@devopspanel.uy)** · **[💬 Abrir una conversación](URL_DE_LA_DEMO)**
+**[✉️ Contacto](mailto:hola@devopspanel.uy)** · **[💬 Abrir una conversación](https://matixv23.github.io/DevPanelDemo)**
 
 <br><br>
 
